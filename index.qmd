@@ -23,7 +23,7 @@ accounts on our HPC training cluster. For more specific requirements, please see
 
 :::{.date}
 
-Monday<br>May 1, 2023
+Monday<br>June 19, 2023
 
 :::
 
@@ -57,7 +57,7 @@ Monday<br>May 1, 2023
 
 :::{.date}
 
-Tuesday<br>May 2, 2023
+Tuesday<br>June 20, 2023
 
 :::
 
@@ -91,7 +91,7 @@ Tuesday<br>May 2, 2023
 
 :::{.date}
 
-Wednesday<br>May 3, 2023
+Wednesday<br>June 21, 2023
 
 :::
 
@@ -113,7 +113,7 @@ Wednesday<br>May 3, 2023
 
 :::{.date}
 
-Thursday<br>May 4, 2023
+Thursday<br>June 22, 2023
 
 :::
 
@@ -135,7 +135,7 @@ Thursday<br>May 4, 2023
 
 :::{.date}
 
-Friday<br>May 5, 2023
+Friday<br>June 23, 2023
 
 :::
 
