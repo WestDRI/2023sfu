@@ -1,0 +1,165 @@
+---
+title: SFU Summer School 2023
+description: |
+  <br>This summer school is offered by [Simon Fraser University](https://www.sfu.ca) on behalf of Western Universities and the [Digital Research Alliance of Canada](https://alliancecan.ca). It is hosted by [SFU's Big Data Hub](https://www.sfu.ca/big-data.html) and is open to all researchers at SFU and other Canadian post-secondary institutions.
+
+  To register, please fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLSf64UL2ujncz3V7EJr1zE5LZ417KaL9GP_6L-qgM_rcrzGiWA/viewform) **using your Canadian post-secondary institution email address**.
+toc: false
+title-block-banner: true
+anchor-sections: false
+---
+
+Each day we will have morning (9am–noon) and afternoon (2pm–5pm) sessions. There will be short coffee breaks
+at 10:30am and 3:30pm with coffee and snacks covered by the registration fee. Participants will have to find lunch on their own.
+
+You can attend as many or as few of the courses as you want.
+
+To participate in the hands-on exercises, you will need to bring your own laptop. We will provide guest
+accounts on our HPC training cluster. For more specific requirements, please see the individual course pages.<br><br><br>
+
+:::{layout="[[2, 5, 5], [2, 5, 5], [2, 10], [2, 10], [2, 10]]"}
+
+:::{.card-body}
+
+:::{.date}
+
+Monday<br>May 1, 2023
+
+:::
+
+:::
+
+:::{.card .mb-3}
+
+:::{.card-body}
+
+[Bash](/bash/index.qmd){.card-title .stretched-link}
+
+[Half-day introduction to Bash & the Unix shell]{.text-muted}
+
+:::
+
+:::
+
+:::{.card .mb-3}
+
+:::{.card-body}
+
+[HPC](/hpc/index.qmd){.card-title .stretched-link}
+
+[Half-day introduction to high-performance research computing]{.text-muted}
+
+:::
+
+:::
+
+:::{.card-body}
+
+:::{.date}
+
+Tuesday<br>May 2, 2023
+
+:::
+
+:::
+
+:::{.card .mb-3}
+
+:::{.card-body}
+
+[Intro R](/r_intro/index.qmd){.card-title .stretched-link}
+
+[Half-day introduction to programming in R]{.text-muted}
+
+:::
+
+:::
+
+:::{.card .mb-3}
+
+:::{.card-body}
+
+[Parallel R](/r_parallel/index.qmd){.card-title .stretched-link}
+
+[Half-day introduction to high-performance R]{.text-muted}
+
+:::
+
+:::
+
+:::{.card-body}
+
+:::{.date}
+
+Wednesday<br>May 3, 2023
+
+:::
+
+:::
+
+:::{.card .mb-3}
+
+:::{.card-body}
+
+[Parallel Julia](/julia/index.qmd){.card-title .stretched-link}
+
+[Full-day introduction to parallel programming in Julia]{.text-muted}
+
+:::
+
+:::
+
+:::{.card-body}
+
+:::{.date}
+
+Thursday<br>May 4, 2023
+
+:::
+
+:::
+
+:::{.card .mb-3}
+
+:::{.card-body}
+
+[Deep learning with PyTorch](/ml/index.qmd){.card-title .stretched-link}
+
+[Full-day introduction to deep learning with the PyTorch framework]{.text-muted}
+
+:::
+
+:::
+
+:::{.card-body}
+
+:::{.date}
+
+Friday<br>May 5, 2023
+
+:::
+
+:::
+
+:::{.card .mb-3}
+
+:::{.card-body}
+
+[Scientific visualization with ParaView](/scivis/index.qmd){.card-title .stretched-link}
+
+[Full-day introduction to scientific visualization with ParaView]{.text-muted}
+
+:::
+
+:::
+
+:::
+
+<br><br>
+![](/img/sfudrac.png){fig-alt="frontlogo"}
+
+<br>
+<center>Hosted by:</center>
+<br>
+
+<center>![](/img/bigdata_logo.png){fig-alt="frontlogo" width="35%"}</center>
