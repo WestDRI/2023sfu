@@ -6,11 +6,11 @@ project:
     - "!/tools/quarto/"
 
 website:
-  title: UVic Spring School 2023
+  title: SFU Summer School 2023
   image: /img/sfudrac_logo.png
   favicon: /img/sfu_favicon.png
-  site-url: https://2023uvic.netlify.app/
-  repo-url: https://github.com/WestDRI/2023uvic
+  site-url: https://2023sfu.netlify.app/
+  repo-url: https://github.com/WestDRI/2023sfu
   reader-mode: true
   page-navigation: true
   page-footer:

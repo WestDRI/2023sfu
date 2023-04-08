@@ -1,1 +1,1 @@
-Sitemap: https://2023uvic.netlify.app/sitemap.xml
+Sitemap: https://2023sfu.netlify.app/sitemap.xml
