@@ -8,7 +8,7 @@ title-block-banner: true
 :::{.topdef}
 
 **Date:** \
-Friday May 5, 2023
+Friday, June 23, 2023
 
 **Time:** \
 9am–5pm (with a two-hour break from noon to 2pm)

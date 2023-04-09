@@ -8,7 +8,7 @@ title-block-banner: true
 :::{.topdef}
 
 **Date:** \
-Tuesday May 2, 2023
+Tuesday, June 20, 2023
 
 **Time:** \
 2pm–5pm
