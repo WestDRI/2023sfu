@@ -6,7 +6,7 @@
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/bash/index.html</loc>
-    <lastmod>2023-04-09T18:07:53.239Z</lastmod>
+    <lastmod>2023-05-08T18:57:03.384Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/calendar.html</loc>
@@ -18,11 +18,11 @@
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/hpc/index.html</loc>
-    <lastmod>2023-04-09T18:07:59.752Z</lastmod>
+    <lastmod>2023-05-08T19:31:37.707Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/index.html</loc>
-    <lastmod>2023-04-09T18:05:26.022Z</lastmod>
+    <lastmod>2023-05-08T19:30:49.674Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/asm.html</loc>
@@ -46,7 +46,7 @@
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/index.html</loc>
-    <lastmod>2023-04-09T18:07:42.675Z</lastmod>
+    <lastmod>2023-05-08T18:50:46.070Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/intro-language.html</loc>
@@ -110,7 +110,7 @@
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/index.html</loc>
-    <lastmod>2023-04-09T18:08:57.229Z</lastmod>
+    <lastmod>2023-05-08T18:50:46.362Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/mnist.html</loc>
@@ -146,7 +146,7 @@
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/index.html</loc>
-    <lastmod>2023-04-09T18:08:10.772Z</lastmod>
+    <lastmod>2023-05-08T19:31:40.547Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/packages.html</loc>
@@ -170,7 +170,7 @@
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_parallel/index.html</loc>
-    <lastmod>2023-04-09T18:08:18.059Z</lastmod>
+    <lastmod>2023-05-08T18:50:46.961Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_parallel/parallel_loops.html</loc>
@@ -198,6 +198,6 @@
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/scivis/index.html</loc>
-    <lastmod>2023-04-09T18:08:31.479Z</lastmod>
+    <lastmod>2023-05-08T18:50:47.261Z</lastmod>
   </url>
 </urlset>
