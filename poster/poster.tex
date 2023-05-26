@@ -5,6 +5,7 @@
 \usepackage{fix-cm}
 
 \renewcommand{\familydefault}{\sfdefault} % default font
+\renewcommand{\baselinestretch}{0.9} % default line separation
 
 \usepackage{graphicx}
 \usepackage[absolute,overlay]{textpos}
@@ -44,7 +45,7 @@
 
 \begin{textblock}{8}(3,8.1)
   {\huge
-    \begin{itemize}\setlength{\itemsep}{0.1mm}
+    \begin{itemize}\setlength{\itemsep}{0.5mm}
     \item Linux command line
     \item Introduction to high-performance computing
     \item Introductory and parallel R
@@ -61,17 +62,18 @@
 \placetextbox{19.6cm}{3cm}{l}{\LARGE{\bf\tc{orange}{Who should participate:}}}
 \begin{textblock}{3.5}(11.2,2.8)
   {\Large
-    \begin{itemize}\setlength{\itemsep}{0.1mm}
+    \begin{itemize}\setlength{\itemsep}{-0.1mm}
     \item Researchers at SFU, UBC, BCIT and other post-secondary institutions
     \item All research disciplines and skill levels -- students, postdocs, faculty and staff -- are welcome to
       participate
+    \item You can attend as many or as few of the courses as you want
     \end{itemize}
   }
 \end{textblock}
 
-\placetextbox{19.6cm}{10cm}{l}{\LARGE{\bf\tc{orange}{Brought to you by:}}}
+\placetextbox{19.6cm}{11cm}{l}{\LARGE{\bf\tc{orange}{Brought to you by:}}}
 
-\begin{textblock}{3.2}(11.2,8.2)
+\begin{textblock}{3.2}(11.2,9)
   \includegraphics[width=\columnwidth]{logos.png}
 \end{textblock}
 
