@@ -3,3 +3,8 @@
 *_cache/
 bash/molecules
 serve.sh
+111.*
+222.*
+poster.aux
+poster.log
+poster.synctex.gz
