@@ -3,7 +3,7 @@ project:
   output-dir: _site
   render:
     - "*.qmd"
-    - "!/tools/quarto/"
+    - "!/poster/"
 
 website:
   title: SFU Summer School 2023

@@ -2,202 +2,202 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://2023sfu.netlify.app/about.html</loc>
-    <lastmod>2023-06-06T05:39:06.838Z</lastmod>
+    <lastmod>2023-06-06T05:46:50.808Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/bash/index.html</loc>
-    <lastmod>2023-06-06T05:39:07.071Z</lastmod>
+    <lastmod>2023-06-06T05:46:51.058Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/calendar.html</loc>
-    <lastmod>2023-06-06T05:39:07.294Z</lastmod>
+    <lastmod>2023-06-06T05:46:51.294Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/contact.html</loc>
-    <lastmod>2023-06-06T05:39:07.514Z</lastmod>
+    <lastmod>2023-06-06T05:46:51.514Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/hpc/index.html</loc>
-    <lastmod>2023-06-06T05:39:07.741Z</lastmod>
+    <lastmod>2023-06-06T05:46:51.734Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/index.html</loc>
-    <lastmod>2023-06-06T05:39:08.061Z</lastmod>
+    <lastmod>2023-06-06T05:46:52.024Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/asm.html</loc>
-    <lastmod>2023-06-06T05:39:08.914Z</lastmod>
+    <lastmod>2023-06-06T05:46:52.911Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/distributed-arrays.html</loc>
-    <lastmod>2023-06-06T05:39:09.711Z</lastmod>
+    <lastmod>2023-06-06T05:46:53.778Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/distributed-julia-set.html</loc>
-    <lastmod>2023-06-06T05:39:10.201Z</lastmod>
+    <lastmod>2023-06-06T05:46:54.261Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/distributed1.html</loc>
-    <lastmod>2023-06-06T05:39:10.801Z</lastmod>
+    <lastmod>2023-06-06T05:46:54.858Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/distributed2.html</loc>
-    <lastmod>2023-06-06T05:39:11.308Z</lastmod>
+    <lastmod>2023-06-06T05:46:55.418Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/index.html</loc>
-    <lastmod>2023-06-06T05:39:11.568Z</lastmod>
+    <lastmod>2023-06-06T05:46:55.684Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/intro-language.html</loc>
-    <lastmod>2023-06-06T05:39:12.161Z</lastmod>
+    <lastmod>2023-06-06T05:46:56.328Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/intro-parallel.html</loc>
-    <lastmod>2023-06-06T05:39:12.441Z</lastmod>
+    <lastmod>2023-06-06T05:46:56.604Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/nbody.html</loc>
-    <lastmod>2023-06-06T05:39:12.858Z</lastmod>
+    <lastmod>2023-06-06T05:46:56.988Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/shared-arrays.html</loc>
-    <lastmod>2023-06-06T05:39:13.648Z</lastmod>
+    <lastmod>2023-06-06T05:46:57.778Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/threads-julia-set.html</loc>
-    <lastmod>2023-06-06T05:39:14.201Z</lastmod>
+    <lastmod>2023-06-06T05:46:58.288Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/threads-slow-series.html</loc>
-    <lastmod>2023-06-06T05:39:14.994Z</lastmod>
+    <lastmod>2023-06-06T05:46:59.104Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/threadsx-julia-set.html</loc>
-    <lastmod>2023-06-06T05:39:15.414Z</lastmod>
+    <lastmod>2023-06-06T05:46:59.591Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/threadsx-slow-series.html</loc>
-    <lastmod>2023-06-06T05:39:15.888Z</lastmod>
+    <lastmod>2023-06-06T05:47:00.134Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/audio_dataloader.html</loc>
-    <lastmod>2023-06-06T05:39:16.851Z</lastmod>
+    <lastmod>2023-06-06T05:47:01.161Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/autograd.html</loc>
-    <lastmod>2023-06-06T05:39:17.441Z</lastmod>
+    <lastmod>2023-06-06T05:47:01.771Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/checkpoints.html</loc>
-    <lastmod>2023-06-06T05:39:18.018Z</lastmod>
+    <lastmod>2023-06-06T05:47:02.278Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/choosing_frameworks.html</loc>
-    <lastmod>2023-06-06T05:39:18.371Z</lastmod>
+    <lastmod>2023-06-06T05:47:02.648Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/concept.html</loc>
-    <lastmod>2023-06-06T05:39:18.898Z</lastmod>
+    <lastmod>2023-06-06T05:47:03.224Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/high_level_frameworks.html</loc>
-    <lastmod>2023-06-06T05:39:19.164Z</lastmod>
+    <lastmod>2023-06-06T05:47:03.494Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/hpc.html</loc>
-    <lastmod>2023-06-06T05:39:19.724Z</lastmod>
+    <lastmod>2023-06-06T05:47:03.998Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/index.html</loc>
-    <lastmod>2023-06-06T05:39:19.958Z</lastmod>
+    <lastmod>2023-06-06T05:47:04.234Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/mnist.html</loc>
-    <lastmod>2023-06-06T05:39:20.964Z</lastmod>
+    <lastmod>2023-06-06T05:47:05.234Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/nn.html</loc>
-    <lastmod>2023-06-06T05:39:21.644Z</lastmod>
+    <lastmod>2023-06-06T05:47:05.728Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/nn_building.html</loc>
-    <lastmod>2023-06-06T05:39:22.218Z</lastmod>
+    <lastmod>2023-06-06T05:47:06.301Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/nn_training.html</loc>
-    <lastmod>2023-06-06T05:39:22.894Z</lastmod>
+    <lastmod>2023-06-06T05:47:06.914Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/pretrained_models.html</loc>
-    <lastmod>2023-06-06T05:39:23.138Z</lastmod>
+    <lastmod>2023-06-06T05:47:07.144Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/ml/resources.html</loc>
-    <lastmod>2023-06-06T05:39:23.428Z</lastmod>
+    <lastmod>2023-06-06T05:47:07.421Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/newsletter.html</loc>
-    <lastmod>2023-06-06T05:39:23.701Z</lastmod>
+    <lastmod>2023-06-06T05:47:07.648Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/basics.html</loc>
-    <lastmod>2023-06-06T05:39:24.564Z</lastmod>
+    <lastmod>2023-06-06T05:47:08.438Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/index.html</loc>
-    <lastmod>2023-06-06T05:39:24.851Z</lastmod>
+    <lastmod>2023-06-06T05:47:08.684Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/packages.html</loc>
-    <lastmod>2023-06-06T05:39:25.214Z</lastmod>
+    <lastmod>2023-06-06T05:47:09.051Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/resources.html</loc>
-    <lastmod>2023-06-06T05:39:25.461Z</lastmod>
+    <lastmod>2023-06-06T05:47:09.304Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/tidyverse.html</loc>
-    <lastmod>2023-06-06T05:39:25.728Z</lastmod>
+    <lastmod>2023-06-06T05:47:09.581Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/why.html</loc>
-    <lastmod>2023-06-06T05:39:25.961Z</lastmod>
+    <lastmod>2023-06-06T05:47:09.844Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_parallel/clusters.html</loc>
-    <lastmod>2023-06-06T05:39:26.344Z</lastmod>
+    <lastmod>2023-06-06T05:47:10.281Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_parallel/index.html</loc>
-    <lastmod>2023-06-06T05:39:26.568Z</lastmod>
+    <lastmod>2023-06-06T05:47:10.508Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_parallel/parallel_loops.html</loc>
-    <lastmod>2023-06-06T05:39:27.118Z</lastmod>
+    <lastmod>2023-06-06T05:47:10.994Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_parallel/parallel_r.html</loc>
-    <lastmod>2023-06-06T05:39:27.498Z</lastmod>
+    <lastmod>2023-06-06T05:47:11.381Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_parallel/parallel_types.html</loc>
-    <lastmod>2023-06-06T05:39:27.741Z</lastmod>
+    <lastmod>2023-06-06T05:47:11.628Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_parallel/partition.html</loc>
-    <lastmod>2023-06-06T05:39:27.951Z</lastmod>
+    <lastmod>2023-06-06T05:47:11.844Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_parallel/performance.html</loc>
-    <lastmod>2023-06-06T05:39:28.214Z</lastmod>
+    <lastmod>2023-06-06T05:47:12.084Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_parallel/rcpp.html</loc>
-    <lastmod>2023-06-06T05:39:28.424Z</lastmod>
+    <lastmod>2023-06-06T05:47:12.291Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/scivis/index.html</loc>
-    <lastmod>2023-06-06T05:39:28.668Z</lastmod>
+    <lastmod>2023-06-06T05:47:12.558Z</lastmod>
   </url>
 </urlset>
