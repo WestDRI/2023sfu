@@ -1,0 +1,88 @@
+% pico-nano-tiny-micro-compact-mini-scriptsize-footnotesize-small-normalsize-large-Large-LARGE-huge-Huge-HUGE
+\documentclass[landscape]{article}
+\usepackage[english]{babel}
+\usepackage[pscoord]{eso-pic}
+\usepackage{fix-cm}
+
+\renewcommand{\familydefault}{\sfdefault} % default font
+\renewcommand{\baselinestretch}{0.9} % default line separation
+
+\usepackage{graphicx}
+\usepackage[absolute,overlay]{textpos}
+
+\newcommand{\placetextbox}[4]{% \placetextbox{<offset left/right>}{<offset top>}{<align>}{<stuff>}
+  \setbox0=\hbox{#4}
+  \AddToShipoutPictureFG*{
+    \if#3r
+    \put(\LenToUnit{\paperwidth-#1},\LenToUnit{\paperheight-#2})
+        {\vtop{{\null}\makebox[0pt][r]{\begin{tabular}{r}#4\end{tabular}}}}
+        \else
+        \put(\LenToUnit{#1},\LenToUnit{\paperheight-#2})
+            {\vtop{{\null}\makebox[0pt][l]{\begin{tabular}{l}#4\end{tabular}}}}
+        \fi
+  }
+}
+
+\makeatletter
+\newcommand\HUGE{\@setfontsize\Huge{40}{48}}
+\makeatother
+
+\newcommand{\tc}{\textcolor}
+\definecolor{navy}{rgb}{0.17, 0.31, 0.38}
+\definecolor{orange}{rgb}{0.54, 0.30, 0.15}
+
+\begin{document}
+
+\thispagestyle{empty}
+~
+\placetextbox{5cm}{3cm}{l}{\HUGE{\bf\tc{navy}{SFU 2023}}}
+\placetextbox{5cm}{4.5cm}{l}{\HUGE{\bf\tc{orange}{Research Computing}}}
+\placetextbox{5cm}{6.0cm}{l}{\HUGE{\bf\tc{orange}{Summer School}}}
+
+\placetextbox{5cm}{8.0cm}{l}{\huge{\bf\tc{navy}{June 19-23, 2023; in-person}}}
+\placetextbox{5cm}{9.2cm}{l}{\huge{\bf Courses will explore introductory}}
+\placetextbox{5cm}{10cm}{l}{\huge{\bf and advanced topics in:}}
+
+\begin{textblock}{8}(3,8.1)
+  {\huge
+    \begin{itemize}\setlength{\itemsep}{0.5mm}
+    \item Linux command line
+    \item Introduction to high-performance computing
+    \item Introductory and parallel R
+    \item Parallel Julia
+    \item Deep learning with PyTorch
+    \item Scientific visualization with ParaView
+    \end{itemize}
+  }
+\end{textblock}
+
+\placetextbox{5cm}{18cm}{l}{\huge{\bf\tc{navy}{MORE INFORMATION \& REGISTRATION}}}
+\placetextbox{5cm}{19cm}{l}{\huge{\bf\tc{navy}{https://2023sfu.netlify.app $|$ training@westdri.ca}}}
+
+\placetextbox{19.6cm}{3cm}{l}{\LARGE{\bf\tc{orange}{Who should participate:}}}
+\begin{textblock}{3.5}(11.2,2.8)
+  {\Large
+    \begin{itemize}\setlength{\itemsep}{-0.1mm}
+    \item Researchers at SFU, UBC, BCIT and other post-secondary institutions
+    \item All research disciplines and skill levels -- students, postdocs, faculty and staff -- are welcome to
+      participate
+    \item You can attend as many or as few of the courses as you want
+    \end{itemize}
+  }
+\end{textblock}
+
+\placetextbox{19.6cm}{11cm}{l}{\LARGE{\bf\tc{orange}{Brought to you by:}}}
+
+\begin{textblock}{3.2}(11.2,9)
+  \includegraphics[width=\columnwidth]{logos.png}
+\end{textblock}
+
+\begin{textblock}{2.3}(-0.2,0.1)
+  \includegraphics[width=\columnwidth]{left.png}
+\end{textblock}
+
+\begin{textblock}{0.39}(15.23,0.1)
+  \includegraphics[width=\columnwidth]{right.png}
+\end{textblock}
+
+\end{document}
