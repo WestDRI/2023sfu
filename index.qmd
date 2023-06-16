@@ -14,7 +14,7 @@ Each day we will have morning (9am – noon) and afternoon (2pm – 5pm) session
 at 10:30am and 3:30pm with coffee and snacks covered by the registration fee. Participants will have to find lunch on their own.
 
 You can attend as many or as few of the courses as you want. All sessions will be in-person at the Big Data
-Hub at SFU's main (Burnaby) campus, in the Applied Science Building (top floor).
+Hub at SFU's main (Burnaby) campus, in the Applied Sciences Building (top floor).
 
 <!-- You can attend as many or as few of the courses as you want. All sessions will be in the [Big Data Hub's -->
 <!-- Presentation Studio](https://www.google.com/maps/place/SFU's+Big+Data+Hub/@49.2773182,-122.9170329,17z/data=!3m2!4b1!5s0x548679bf1759cda7:0x9fd3f3a25f691ba2!4m6!3m5!1s0x548679bf1a2d718b:0x9c74a8237eb2fc82!8m2!3d49.2773147!4d-122.914458!16s%2Fg%2F11h9qf0qbw) (ASB 10900). -->
