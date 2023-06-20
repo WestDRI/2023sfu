@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/index.html</loc>
-    <lastmod>2023-06-18T23:46:17.602Z</lastmod>
+    <lastmod>2023-06-20T15:25:15.667Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/julia/asm.html</loc>
@@ -142,27 +142,27 @@
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/basics.html</loc>
-    <lastmod>2023-06-06T05:47:08.438Z</lastmod>
+    <lastmod>2023-06-20T15:25:27.794Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/index.html</loc>
-    <lastmod>2023-06-08T18:28:54.233Z</lastmod>
+    <lastmod>2023-06-20T15:25:19.474Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/packages.html</loc>
-    <lastmod>2023-06-06T05:47:09.051Z</lastmod>
+    <lastmod>2023-06-20T15:25:29.764Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/resources.html</loc>
-    <lastmod>2023-06-06T05:47:09.304Z</lastmod>
+    <lastmod>2023-06-20T15:25:43.774Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/tidyverse.html</loc>
-    <lastmod>2023-06-06T05:47:09.581Z</lastmod>
+    <lastmod>2023-06-20T15:25:37.940Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_intro/why.html</loc>
-    <lastmod>2023-06-06T05:47:09.844Z</lastmod>
+    <lastmod>2023-06-20T15:25:26.014Z</lastmod>
   </url>
   <url>
     <loc>https://2023sfu.netlify.app/r_parallel/clusters.html</loc>
@@ -199,5 +199,33 @@
   <url>
     <loc>https://2023sfu.netlify.app/scivis/index.html</loc>
     <lastmod>2023-06-18T23:46:24.178Z</lastmod>
+  </url>
+  <url>
+    <loc>https://2023sfu.netlify.app/r_intro/run_r_intro.html</loc>
+    <lastmod>2023-06-20T15:25:22.024Z</lastmod>
+  </url>
+  <url>
+    <loc>https://2023sfu.netlify.app/r_intro/control_flow.html</loc>
+    <lastmod>2023-06-20T15:25:36.500Z</lastmod>
+  </url>
+  <url>
+    <loc>https://2023sfu.netlify.app/r_intro/data_structure.html</loc>
+    <lastmod>2023-06-20T15:25:31.520Z</lastmod>
+  </url>
+  <url>
+    <loc>https://2023sfu.netlify.app/r_intro/functions.html</loc>
+    <lastmod>2023-06-20T15:25:34.954Z</lastmod>
+  </url>
+  <url>
+    <loc>https://2023sfu.netlify.app/r_intro/indexing.html</loc>
+    <lastmod>2023-06-20T15:25:33.207Z</lastmod>
+  </url>
+  <url>
+    <loc>https://2023sfu.netlify.app/r_intro/plotting.html</loc>
+    <lastmod>2023-06-20T15:25:39.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://2023sfu.netlify.app/r_intro/publishing.html</loc>
+    <lastmod>2023-06-20T15:25:41.984Z</lastmod>
   </url>
 </urlset>
