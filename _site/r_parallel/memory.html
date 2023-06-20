@@ -8,7 +8,7 @@
 
 <meta name="author" content="Marie-Hélène Burle">
 
-<title>SFU Summer School 2023 - R on HPC clusters</title>
+<title>SFU Summer School 2023 - Memory management</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../r_parallel/performance.html" rel="next">
-<link href="../r_parallel/run_r_hpc.html" rel="prev">
+<link href="../r_parallel/parallel_types.html" rel="next">
+<link href="../r_parallel/optimizations.html" rel="prev">
 <link href="..//img/sfu_favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -101,7 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r_parallel/index.html"><b><em>Parallel R</em></b></a></li><li class="breadcrumb-item"><a href="../r_parallel/clusters.html">R on HPC clusters</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r_parallel/index.html"><b><em>Parallel R</em></b></a></li><li class="breadcrumb-item"><a href="../r_parallel/memory.html">Memory management</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r_parallel/clusters.html" class="sidebar-item-text sidebar-link active">
+  <a href="../r_parallel/clusters.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R on HPC clusters</span></a>
   </div>
 </li>
@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r_parallel/memory.html" class="sidebar-item-text sidebar-link">
+  <a href="../r_parallel/memory.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Memory management</span></a>
   </div>
 </li>
@@ -256,27 +256,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title"><em>On this page:</em></h2>
    
   <ul>
-  <li><a href="#modules" id="toc-modules" class="nav-link active" data-scroll-target="#modules">Modules</a>
-  <ul>
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
-  <li><a href="#c-compiler" id="toc-c-compiler" class="nav-link" data-scroll-target="#c-compiler">C compiler</a></li>
-  <li><a href="#loading-the-modules" id="toc-loading-the-modules" class="nav-link" data-scroll-target="#loading-the-modules">Loading the modules</a></li>
-  </ul></li>
-  <li><a href="#installing-r-packages" id="toc-installing-r-packages" class="nav-link" data-scroll-target="#installing-r-packages">Installing R packages</a></li>
-  <li><a href="#running-r-jobs" id="toc-running-r-jobs" class="nav-link" data-scroll-target="#running-r-jobs">Running R jobs</a>
-  <ul>
-  <li><a href="#interactive-jobs" id="toc-interactive-jobs" class="nav-link" data-scroll-target="#interactive-jobs">Interactive jobs</a></li>
-  <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts">Scripts</a></li>
-  </ul></li>
+  <li><a href="#releasing-memory" id="toc-releasing-memory" class="nav-link active" data-scroll-target="#releasing-memory">Releasing memory</a></li>
+  <li><a href="#caching-in-memory" id="toc-caching-in-memory" class="nav-link" data-scroll-target="#caching-in-memory">Caching in memory</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">R on HPC clusters</h1>
+<h1 class="title">Memory management</h1>
 </div>
 
 
@@ -298,114 +288,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <div class="def">
-<p>This section will show you how to use R once you have logged in to a remote cluster via SSH.</p>
+<p>Memory can be a limiting factor and releasing it when not needed can be critical to avoid <a href="https://en.wikipedia.org/wiki/Out_of_memory">out of memory</a> states. On the other hand, <a href="https://en.wikipedia.org/wiki/Memoization">memoisation</a> is an optimization technique which stores the results of heavy computations for re-use at the cost of increasing memory usage.</p>
+<p>Memory and speed are thus linked in a trade-off.</p>
 </div>
-<section id="modules" class="level2">
-<h2 class="anchored" data-anchor-id="modules">Modules</h2>
-<p>On the Alliance clusters, a number of utilities are available right away (e.g.&nbsp;Bash utilities, <code>git</code>, <code>tmux</code>, various text editors). Before you can use more specialized software however, you have to load the module corresponding to the version of your choice as well as any potential dependencies.</p>
-<div class="note">
-<p>The cluster setup for this course has everything loaded, so this step is not necessary today, but it is very important to learn it.</p>
-</div>
-<section id="r" class="level3">
-<h3 class="anchored" data-anchor-id="r">R</h3>
-<p>First, of course, we need an R module.</p>
-<p>To see which versions of R are available on a cluster, run:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> spider r</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To see the dependencies of a particular version (e.g.&nbsp;<code>r/4.1.2</code>), run:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> spider r/4.1.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This shows us that we need <code>StdEnv/2020</code> to load <code>r/4.1.2</code>.</p>
+<section id="releasing-memory" class="level2">
+<h2 class="anchored" data-anchor-id="releasing-memory">Releasing memory</h2>
+<p>It is best to avoid creating very large intermediate objects (e.g.&nbsp;with nested functions or functions chained with the <a href="https://cran.r-project.org/web/packages/magrittr/index.html#:~:text=magrittr%3A%20A%20Forward-Pipe%20Operator,of%20right-hand%20side%20expressions.">magrittr</a> pipe), but if you must, remove them from the global environment with <code>rm()</code> when you don’t need them anymore. Once all the pointers to an object in memory are deleted, the garbage collector will clear its value and release the memory it used.</p>
+<p>Another way to release the memory used by heavy intermediate objects is with functions: if you create those objects in the local environment of a function (instead of directly in the global environment), they will be cleared from memory as soon as the function has finished running.</p>
+<p>Note that in the case of a very large function, it might still be beneficial to run <code>rm()</code> inside the function to clear the memory for other processes coming next within that function. But this is a pretty rare case.</p>
 </section>
-<section id="c-compiler" class="level3">
-<h3 class="anchored" data-anchor-id="c-compiler">C compiler</h3>
-<p>If you plan on installing any R package, you will also need a C compiler.</p>
-<p>In theory, one could use the proprietary Intel compiler which is loaded by default on the Alliance clusters, but it is recommended to replace it with the GCC compiler (R packages can be compiled by any C compiler—also including Clang and LLVM—but the default GCC compiler is the best way to avoid headaches).</p>
-<div class="exo">
-<div class="yourturn">
-<p>Your turn:</p>
-</div>
-<ul>
-<li>How can you check which <code>gcc</code> versions are available on our training cluster?</li>
-<li>What are the dependencies required by <code>gcc/9.3.0</code>?</li>
-</ul>
-</div>
-</section>
-<section id="loading-the-modules" class="level3">
-<h3 class="anchored" data-anchor-id="loading-the-modules">Loading the modules</h3>
-<p>Once you know which modules you need, you can load them. The order is important: the dependencies (here <code>StdEnv/2020</code>) must be listed before the modules which depend on them.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load StdEnv/2020 gcc/9.3.0 r/4.1.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="installing-r-packages" class="level2">
-<h2 class="anchored" data-anchor-id="installing-r-packages">Installing R packages</h2>
-<div class="note">
-<p>For this course, all packages have already been installed in a communal library. You thus don’t have to install anything.</p>
-</div>
-<p>To install a package, launch the interactive R console with:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In the R console, run:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"&lt;package_name&gt;"</span>, <span class="at">repos=</span><span class="st">"&lt;url-cran-mirror&gt;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="note">
-<p><code>repos</code> argument: chose a <a href="https://cran.r-project.org/mirrors.html">CRAN mirror close to the location of your cluster</a> or use <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a>.</p>
+<section id="caching-in-memory" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="caching-in-memory">Caching in memory</h2>
+<p><a href="https://en.wikipedia.org/wiki/Memoization">Memoisation</a> is a technique by which the results of heavy computations are stored in memory to avoid have to re-calculate them. This can be convenient in a variety of settings (e.g.&nbsp;to reduce calls to an API), but mostly, it can greatly improve the efficiency of some code such as recursive function calls.</p>
+<div class="page-columns page-full"><p>Let’s consider the calculation of the <a href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci numbers</a> as an example. Those numbers form a sequence starting with <code>0</code> and <code>1</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, after which each number is the sum of the previous two.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Alternative versions have the sequence start with <code>1, 1</code> or with <code>1, 2</code>.</p></li></div></div>
+<div class="page-columns page-full"><p>Here is a function that would return the n<sup>th</sup> Fibonacci number<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;There are more efficient ways to calculate the Fibonacci numbers, but this inefficient function is a great example to show the advantage of memoisation.</p></li></div></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fib <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(n <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span>(n <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="dv">1</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Recall</span>(n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">Recall</span>(n <span class="sc">-</span> <span class="dv">2</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It can be written more tersely as:</p>
+<div class="cell" data-hash="memory_cache/html/unnamed-chunk-1_168e77b79d6e86369ea78c634d9eaff5">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fib <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(n <span class="sc">==</span> <span class="dv">0</span>) <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(n <span class="sc">==</span> <span class="dv">1</span>) <span class="fu">return</span>(<span class="dv">1</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Recall</span>(n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">Recall</span>(n <span class="sc">-</span> <span class="dv">2</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="note">
-<p>The first time you install a package, R will ask you whether you want to create a personal library in your home directory. Answer <code>yes</code> to both questions. Your packages will now install under <code>~/</code>.</p>
+<p><code>Recall()</code> is a placeholder for the name of the recursive function. We could have used <code>fib()</code> instead, but <code>Recall()</code> is more robust as it allows for function renaming.</p>
 </div>
-<div class="note">
-<p>Some packages require additional modules to be loaded before they can be installed. Other packages need additional R packages as dependencies. In either case, you will get explicit error messages. Adding the argument <code>dependencies = T</code> helps in the second case, but you will still have to add packages manually from time to time.</p>
+<p>Memoisation is very useful here because, for each Fibonacci number, we need to calculate the two preceding Fibonacci numbers and to calculate each of those we need to calculate the two Fibonacci numbers preceding that one and to calculate… etc. That is a large number of calculations, but, thanks to caching, we don’t have to calculate any one of them more than once.</p>
+<p>The packages <a href="https://cran.r-project.org/web/packages/R.cache/index.html">R.cache</a> and <a href="https://cran.r-project.org/web/packages/memoise/index.html">memoise</a> both allow for memoisation with an incredibly simple syntax.</p>
+<p>Applying the latter to our function gives us:</p>
+<div class="cell" data-hash="memory_cache/html/unnamed-chunk-2_e55719dec0c861bfdae42378447fda40">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(memoise)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>fibmem <span class="ot">&lt;-</span> <span class="fu">memoise</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">function</span>(n) {</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(n <span class="sc">==</span> <span class="dv">0</span>) <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(n <span class="sc">==</span> <span class="dv">1</span>) <span class="fu">return</span>(<span class="dv">1</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Recall</span>(n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">Recall</span>(n <span class="sc">-</span> <span class="dv">2</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>To leave the R console, press <code>&lt;Ctrl+D&gt;</code>.</p>
-</section>
-<section id="running-r-jobs" class="level2">
-<h2 class="anchored" data-anchor-id="running-r-jobs">Running R jobs</h2>
-<p>There are two types of jobs that can be launched on an Alliance cluster: interactive jobs and batch jobs. We will practice both and discuss their respective merits and when to use which.</p>
-<p>For this course, I purposefully built a rather small cluster (10 nodes with 4 CPUs and 30GB each) to give a tangible illustration of the constraints of resource sharing.</p>
-<section id="interactive-jobs" class="level3">
-<h3 class="anchored" data-anchor-id="interactive-jobs">Interactive jobs</h3>
-<div class="note">
-<p>While it is fine to run R on the login node when you install packages, you <strong>must start a SLURM job before any heavy computation</strong>.</p>
+<p>We can do some benchmarking to see the speedup for the 30<sup>th</sup> Fibonacci number:</p>
+<div class="cell" data-hash="memory_cache/html/unnamed-chunk-3_026ce4e421ca6a24630586d946d65106">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bench)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mark</span>(<span class="fu">fib</span>(n), <span class="fu">fibmem</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Some expressions had a GC in every iteration; so filtering is
+disabled.</code></pre>
 </div>
-<p>To run R interactively, you should launch an <code>salloc</code> session.</p>
-<div class="example">
-<p>Example:</p>
-</div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">salloc</span> <span class="at">--time</span><span class="op">=</span>1:10:00 <span class="at">--mem-per-cpu</span><span class="op">=</span>3700M <span class="at">--ntasks</span><span class="op">=</span>8</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This takes you to a compute node where you can now launch R to run computations:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="info">
-<p>This however leads to the same inefficient use of resources as happens when running an RStudio server: all the resources that you requested are blocked for you while your job is running, whether you are making use of them (running heavy computations) or not (thinking, typing code, running computations that use only a fraction of the requested resources).</p>
-<p>Interactive jobs are thus best kept to develop code.</p>
-</div>
-</section>
-<section id="scripts" class="level3">
-<h3 class="anchored" data-anchor-id="scripts">Scripts</h3>
-<p>To run an R script called <code>&lt;your_script&gt;.R</code>, you first need to write a job script:</p>
-<div class="example">
-<p>Example:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>&lt;your_job&gt;.sh</strong></pre>
-</div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --account=def-&lt;your_account&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=15</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem-per-cpu=3000M</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=4</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name="&lt;your_job&gt;"</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load StdEnv/2020 gcc/11.3.0 r/4.1.2</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> <span class="op">&lt;</span>your_script<span class="op">&gt;</span>.R   <span class="co"># Note that R scripts are run with the command `Rscript`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 6
+  expression      min   median `itr/sec` mem_alloc `gc/sec`
+  &lt;bch:expr&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
+1 fib(n)        1.53s    1.53s     0.654      33KB     23.5
+2 fibmem(n)   37.04µs  38.81µs 23955.       68.4KB     16.8</code></pre>
 </div>
 </div>
-<p>Then launch your job with:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="op">&lt;</span>your_job<span class="op">&gt;</span>.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You can monitor your job with <code>sq</code> (an alias for <code>squeue -u $USER $@</code>).</p>
-<div class="info">
-<p>Batch jobs are the best approach to run parallel computations, particularly when they require a lot of hardware.</p>
-<p>It will save you lots of waiting time (Alliance clusters) or money (commercial clusters).</p>
-</div>
+<p>The speedup is over 35,000!</p>
 
 
 </section>
-</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -657,13 +610,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../r_parallel/run_r_hpc.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SSH login</span>
+      <a href="../r_parallel/optimizations.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Optimizations</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../r_parallel/performance.html" class="pagination-link">
-        <span class="nav-page-text">Measuring performance</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../r_parallel/parallel_types.html" class="pagination-link">
+        <span class="nav-page-text">Types of parallelism</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

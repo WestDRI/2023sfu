@@ -1,55 +1,76 @@
 ---
-title: Running R on HPC clusters
+title: R on HPC clusters
 author: Marie-Hélène Burle
 ---
 
-## Loading modules
+:::{.def}
 
-### Intel vs GCC compilers
+This section will show you how to use R once you have logged in to a remote cluster via SSH.
 
-To compile R packages, you need a C compiler.
+:::
 
-In theory, you could use the proprietary Intel compiler which is loaded by default on the Alliance clusters, but it is recommended to replace it with the GCC compiler (R packages can even be compiled with Clang and LLVM, but the default GCC compiler is the best way to avoid headaches).
+## Modules
 
-It is thus much simpler to always load a `gcc` module before loading an `r` module.
+On the Alliance clusters, a number of utilities are available right away (e.g. Bash utilities, `git`, `tmux`, various text editors). Before you can use more specialized software however, you have to load the module corresponding to the version of your choice as well as any potential dependencies.
 
-### R module
+:::{.note}
 
-To see what versions of R are available on a cluster, run:
+The cluster setup for this course has everything loaded, so this step is not necessary today, but it is very important to learn it.
+
+:::
+
+### R
+
+First, of course, we need an R module.
+
+To see which versions of R are available on a cluster, run:
 
 ```{.bash}
 module spider r
 ```
 
-To see the dependencies of a particular version (e.g. `r/4.2.1`), run:
+To see the dependencies of a particular version (e.g. `r/4.1.2`), run:
 
 ```{.bash}
-module spider r/4.2.1
+module spider r/4.1.2
 ```
 
-:::{.note}
+This shows us that we need `StdEnv/2020` to load `r/4.1.2`.
 
-`StdEnv/2020` is a required module for this version.
+### C compiler
 
-On most Alliance clusters, it is automatically loaded, so you don't need to include it. You can double-check with `module list` or you can include it (before `r/4.2.1`) just to be sure.
+If you plan on installing any R package, you will also need a C compiler.
+
+In theory, one could use the proprietary Intel compiler which is loaded by default on the Alliance clusters, but it is recommended to replace it with the GCC compiler (R packages can be compiled by any C compiler—also including Clang and LLVM—but the default GCC compiler is the best way to avoid headaches).
+
+:::{.exo}
+
+:::{.yourturn}
+
+Your turn:
 
 :::
 
-Finally, load your modules.
-
-:::{.example}
-
-Example:
+- How can you check which `gcc` versions are available on our training cluster?
+- What are the dependencies required by `gcc/9.3.0`?
 
 :::
+
+### Loading the modules
+
+Once you know which modules you need, you can load them. The order is important: the dependencies (here `StdEnv/2020`) must be listed before the modules which depend on them.
 
 ```{.bash}
-module load StdEnv/2020 gcc/11.3.0 r/4.2.1
+module load StdEnv/2020 gcc/9.3.0 r/4.1.2
 ```
 
 ## Installing R packages
 
----
+:::{.note}
+
+For this course, all packages have already been installed in a communal library. You thus don't have to install anything.
+
+:::
 
 To install a package, launch the interactive R console with:
 
@@ -85,34 +106,9 @@ To leave the R console, press `<Ctrl+D>`.
 
 ## Running R jobs
 
-### Scripts
+There are two types of jobs that can be launched on an Alliance cluster: interactive jobs and batch jobs. We will practice both and discuss their respective merits and when to use which.
 
-To run an R script called `<your_script>.R`, you first need to write a job script:
-
-:::{.example}
-
-Example:
-
-```{.bash filename="<your_job>.sh"}
-#!/bin/bash
-#SBATCH --account=def-<your_account>
-#SBATCH --time=15
-#SBATCH --mem-per-cpu=3000M
-#SBATCH --cpus-per-task=4
-#SBATCH --job-name="<your_job>"
-module load StdEnv/2020 gcc/11.3.0 r/4.2.1
-Rscript <your_script>.R	  # Note that R scripts are run with the command `Rscript`
-```
-
-:::
-
-Then launch your job with:
-
-```{.bash}
-sbatch <your_job>.sh
-```
-
-You can monitor your job with `sq` (an alias for `squeue -u $USER $@`).
+For this course, I purposefully built a rather small cluster (10 nodes with 4 CPUs and 30GB each) to give a tangible illustration of the constraints of resource sharing.
 
 ### Interactive jobs
 
@@ -131,7 +127,7 @@ Example:
 :::
 
 ```{.bash}
-salloc --time=1:10:00 --mem-per-cpu=7000M --ntasks=8
+salloc --time=1:10:00 --mem-per-cpu=3700M --ntasks=8
 ```
 
 This takes you to a compute node where you can now launch R to run computations:
@@ -139,3 +135,48 @@ This takes you to a compute node where you can now launch R to run computations:
 ```{.bash}
 R
 ```
+
+:::{.info}
+
+This however leads to the same inefficient use of resources as happens when running an RStudio server: all the resources that you requested are blocked for you while your job is running, whether you are making use of them (running heavy computations) or not (thinking, typing code, running computations that use only a fraction of the requested resources).
+
+Interactive jobs are thus best kept to develop code.
+
+:::
+
+### Scripts
+
+To run an R script called `<your_script>.R`, you first need to write a job script:
+
+:::{.example}
+
+Example:
+
+```{.bash filename="<your_job>.sh"}
+#!/bin/bash
+#SBATCH --account=def-<your_account>
+#SBATCH --time=15
+#SBATCH --mem-per-cpu=3000M
+#SBATCH --cpus-per-task=4
+#SBATCH --job-name="<your_job>"
+module load StdEnv/2020 gcc/11.3.0 r/4.1.2
+Rscript <your_script>.R	  # Note that R scripts are run with the command `Rscript`
+```
+
+:::
+
+Then launch your job with:
+
+```{.bash}
+sbatch <your_job>.sh
+```
+
+You can monitor your job with `sq` (an alias for `squeue -u $USER $@`).
+
+:::{.info}
+
+Batch jobs are the best approach to run parallel computations, particularly when they require a lot of hardware.
+
+It will save you lots of waiting time (Alliance clusters) or money (commercial clusters).
+
+:::

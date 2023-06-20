@@ -8,7 +8,7 @@
 
 <meta name="author" content="Marie-Hélène Burle">
 
-<title>SFU Summer School 2023 - R on HPC clusters</title>
+<title>SFU Summer School 2023 - SSH login</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../r_parallel/performance.html" rel="next">
-<link href="../r_parallel/run_r_hpc.html" rel="prev">
+<link href="../r_parallel/clusters.html" rel="next">
+<link href="../r_parallel/index.html" rel="prev">
 <link href="..//img/sfu_favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r_parallel/index.html"><b><em>Parallel R</em></b></a></li><li class="breadcrumb-item"><a href="../r_parallel/clusters.html">R on HPC clusters</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r_parallel/index.html"><b><em>Parallel R</em></b></a></li><li class="breadcrumb-item"><a href="../r_parallel/run_r_hpc.html">SSH login</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -180,13 +180,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r_parallel/run_r_hpc.html" class="sidebar-item-text sidebar-link">
+  <a href="../r_parallel/run_r_hpc.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">SSH login</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r_parallel/clusters.html" class="sidebar-item-text sidebar-link active">
+  <a href="../r_parallel/clusters.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R on HPC clusters</span></a>
   </div>
 </li>
@@ -256,17 +256,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title"><em>On this page:</em></h2>
    
   <ul>
-  <li><a href="#modules" id="toc-modules" class="nav-link active" data-scroll-target="#modules">Modules</a>
+  <li><a href="#why-not-use-rstudio-server" id="toc-why-not-use-rstudio-server" class="nav-link active" data-scroll-target="#why-not-use-rstudio-server">Why not use RStudio server?</a></li>
+  <li><a href="#logging-in-the-temporary-cluster-through-ssh" id="toc-logging-in-the-temporary-cluster-through-ssh" class="nav-link" data-scroll-target="#logging-in-the-temporary-cluster-through-ssh">Logging in the temporary cluster through SSH</a>
   <ul>
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
-  <li><a href="#c-compiler" id="toc-c-compiler" class="nav-link" data-scroll-target="#c-compiler">C compiler</a></li>
-  <li><a href="#loading-the-modules" id="toc-loading-the-modules" class="nav-link" data-scroll-target="#loading-the-modules">Loading the modules</a></li>
+  <li><a href="#open-a-terminal-emulator" id="toc-open-a-terminal-emulator" class="nav-link" data-scroll-target="#open-a-terminal-emulator">Open a terminal emulator</a></li>
+  <li><a href="#access-the-cluster-through-secure-shell" id="toc-access-the-cluster-through-secure-shell" class="nav-link" data-scroll-target="#access-the-cluster-through-secure-shell">Access the cluster through secure shell</a>
+  <ul>
+  <li><a href="#windows-users" id="toc-windows-users" class="nav-link" data-scroll-target="#windows-users">Windows users</a></li>
+  <li><a href="#macos-and-linux-users" id="toc-macos-and-linux-users" class="nav-link" data-scroll-target="#macos-and-linux-users">MacOS and Linux users</a></li>
   </ul></li>
-  <li><a href="#installing-r-packages" id="toc-installing-r-packages" class="nav-link" data-scroll-target="#installing-r-packages">Installing R packages</a></li>
-  <li><a href="#running-r-jobs" id="toc-running-r-jobs" class="nav-link" data-scroll-target="#running-r-jobs">Running R jobs</a>
-  <ul>
-  <li><a href="#interactive-jobs" id="toc-interactive-jobs" class="nav-link" data-scroll-target="#interactive-jobs">Interactive jobs</a></li>
-  <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts">Scripts</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -276,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">R on HPC clusters</h1>
+<h1 class="title">SSH login</h1>
 </div>
 
 
@@ -298,110 +297,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <div class="def">
-<p>This section will show you how to use R once you have logged in to a remote cluster via SSH.</p>
+<p>This section will show you how to access our temporary remote cluster through SSH.</p>
 </div>
-<section id="modules" class="level2">
-<h2 class="anchored" data-anchor-id="modules">Modules</h2>
-<p>On the Alliance clusters, a number of utilities are available right away (e.g.&nbsp;Bash utilities, <code>git</code>, <code>tmux</code>, various text editors). Before you can use more specialized software however, you have to load the module corresponding to the version of your choice as well as any potential dependencies.</p>
-<div class="note">
-<p>The cluster setup for this course has everything loaded, so this step is not necessary today, but it is very important to learn it.</p>
-</div>
-<section id="r" class="level3">
-<h3 class="anchored" data-anchor-id="r">R</h3>
-<p>First, of course, we need an R module.</p>
-<p>To see which versions of R are available on a cluster, run:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> spider r</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To see the dependencies of a particular version (e.g.&nbsp;<code>r/4.1.2</code>), run:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> spider r/4.1.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This shows us that we need <code>StdEnv/2020</code> to load <code>r/4.1.2</code>.</p>
+<section id="why-not-use-rstudio-server" class="level2">
+<h2 class="anchored" data-anchor-id="why-not-use-rstudio-server">Why not use RStudio server?</h2>
+<p>In <a href="https://mint.westdri.ca/r/top_intro.html">our introduction to R</a>, we used an RStudio server running on a remote cluster. In this course, we will log in a similar remote supercomputer using <a href="https://en.wikipedia.org/wiki/Secure_Shell">Secure Shell</a>, then run R scripts from the command line.</p>
+<p>Why are we not making use of the interactivity of R which is an interpreted language and why are we not using the added comfort of an IDE? The short answer is: resource efficiency.</p>
+<p>Once you have developed your code in an interactive fashion in the IDE of your choice using small hardware resources on a sample of your data, running scripts allows you to only request large resources when you need them (i.e.&nbsp;when your code is running). This prevents heavy resources from sitting idle when not in use, as would happen in an interactive session while you type, think, etc. It will save you money on commercial clusters and waiting time on the Alliance clusters.</p>
+<p>This course being about high-performance R, let’s learn to use it through scripts.</p>
 </section>
-<section id="c-compiler" class="level3">
-<h3 class="anchored" data-anchor-id="c-compiler">C compiler</h3>
-<p>If you plan on installing any R package, you will also need a C compiler.</p>
-<p>In theory, one could use the proprietary Intel compiler which is loaded by default on the Alliance clusters, but it is recommended to replace it with the GCC compiler (R packages can be compiled by any C compiler—also including Clang and LLVM—but the default GCC compiler is the best way to avoid headaches).</p>
-<div class="exo">
-<div class="yourturn">
-<p>Your turn:</p>
-</div>
-<ul>
-<li>How can you check which <code>gcc</code> versions are available on our training cluster?</li>
-<li>What are the dependencies required by <code>gcc/9.3.0</code>?</li>
-</ul>
-</div>
-</section>
-<section id="loading-the-modules" class="level3">
-<h3 class="anchored" data-anchor-id="loading-the-modules">Loading the modules</h3>
-<p>Once you know which modules you need, you can load them. The order is important: the dependencies (here <code>StdEnv/2020</code>) must be listed before the modules which depend on them.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load StdEnv/2020 gcc/9.3.0 r/4.1.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="installing-r-packages" class="level2">
-<h2 class="anchored" data-anchor-id="installing-r-packages">Installing R packages</h2>
-<div class="note">
-<p>For this course, all packages have already been installed in a communal library. You thus don’t have to install anything.</p>
-</div>
-<p>To install a package, launch the interactive R console with:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In the R console, run:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"&lt;package_name&gt;"</span>, <span class="at">repos=</span><span class="st">"&lt;url-cran-mirror&gt;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="note">
-<p><code>repos</code> argument: chose a <a href="https://cran.r-project.org/mirrors.html">CRAN mirror close to the location of your cluster</a> or use <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a>.</p>
-</div>
-<div class="note">
-<p>The first time you install a package, R will ask you whether you want to create a personal library in your home directory. Answer <code>yes</code> to both questions. Your packages will now install under <code>~/</code>.</p>
-</div>
-<div class="note">
-<p>Some packages require additional modules to be loaded before they can be installed. Other packages need additional R packages as dependencies. In either case, you will get explicit error messages. Adding the argument <code>dependencies = T</code> helps in the second case, but you will still have to add packages manually from time to time.</p>
-</div>
-<p>To leave the R console, press <code>&lt;Ctrl+D&gt;</code>.</p>
-</section>
-<section id="running-r-jobs" class="level2">
-<h2 class="anchored" data-anchor-id="running-r-jobs">Running R jobs</h2>
-<p>There are two types of jobs that can be launched on an Alliance cluster: interactive jobs and batch jobs. We will practice both and discuss their respective merits and when to use which.</p>
-<p>For this course, I purposefully built a rather small cluster (10 nodes with 4 CPUs and 30GB each) to give a tangible illustration of the constraints of resource sharing.</p>
-<section id="interactive-jobs" class="level3">
-<h3 class="anchored" data-anchor-id="interactive-jobs">Interactive jobs</h3>
-<div class="note">
-<p>While it is fine to run R on the login node when you install packages, you <strong>must start a SLURM job before any heavy computation</strong>.</p>
-</div>
-<p>To run R interactively, you should launch an <code>salloc</code> session.</p>
+<section id="logging-in-the-temporary-cluster-through-ssh" class="level2">
+<h2 class="anchored" data-anchor-id="logging-in-the-temporary-cluster-through-ssh">Logging in the temporary cluster through SSH</h2>
+<p>You do not need to install anything on your machine for this course as we will provide access to a temporary remote cluster.</p>
 <div class="example">
-<p>Example:</p>
+<p>A username, hostname, and password will be given to you during the workshop.</p>
 </div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">salloc</span> <span class="at">--time</span><span class="op">=</span>1:10:00 <span class="at">--mem-per-cpu</span><span class="op">=</span>3700M <span class="at">--ntasks</span><span class="op">=</span>8</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This takes you to a compute node where you can now launch R to run computations:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="info">
-<p>This however leads to the same inefficient use of resources as happens when running an RStudio server: all the resources that you requested are blocked for you while your job is running, whether you are making use of them (running heavy computations) or not (thinking, typing code, running computations that use only a fraction of the requested resources).</p>
-<p>Interactive jobs are thus best kept to develop code.</p>
+<div class="note">
+<p>Note that this temporary cluster will only be available for the duration of this course.</p>
+</div>
+<section id="open-a-terminal-emulator" class="level3">
+<h3 class="anchored" data-anchor-id="open-a-terminal-emulator">Open a terminal emulator</h3>
+<p>Windows users:  Install the free version of <a href="https://mobaxterm.mobatek.net/download.html">MobaXTerm</a> and launch it.<br>
+MacOS users:   Launch Terminal.<br>
+Linux users:    &nbsp;Open the terminal emulator of your choice.</p>
+</section>
+<section id="access-the-cluster-through-secure-shell" class="level3">
+<h3 class="anchored" data-anchor-id="access-the-cluster-through-secure-shell">Access the cluster through secure shell</h3>
+<section id="windows-users" class="level4">
+<h4 class="anchored" data-anchor-id="windows-users">Windows users</h4>
+<p>Follow the first 18% of <a href="https://mobaxterm.mobatek.net/demo.html">this demo</a>.</p>
+<p>For “Remote host”, use the hostname we gave you.<br>
+Select the box “Specify username” and provide your username.</p>
+<div class="note">
+<p>Note that the password is entered through blind typing, meaning that you will not see anything happening as you type it. This is a Linux feature. While it is a little disturbing at first, do know that it is working. Make sure to type it slowly to avoid typos, then press the “enter” key on your keyboard.</p>
 </div>
 </section>
-<section id="scripts" class="level3">
-<h3 class="anchored" data-anchor-id="scripts">Scripts</h3>
-<p>To run an R script called <code>&lt;your_script&gt;.R</code>, you first need to write a job script:</p>
-<div class="example">
-<p>Example:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>&lt;your_job&gt;.sh</strong></pre>
+<section id="macos-and-linux-users" class="level4">
+<h4 class="anchored" data-anchor-id="macos-and-linux-users">MacOS and Linux users</h4>
+<p>In the terminal, run:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="op">&lt;</span>username<span class="op">&gt;</span>@<span class="op">&lt;</span>hostname<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="note">
+<p>Replace the username and hostname by their values.<br> For instance:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> user021@somecluster.c3.ca</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --account=def-&lt;your_account&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=15</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem-per-cpu=3000M</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=4</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name="&lt;your_job&gt;"</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load StdEnv/2020 gcc/11.3.0 r/4.1.2</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> <span class="op">&lt;</span>your_script<span class="op">&gt;</span>.R   <span class="co"># Note that R scripts are run with the command `Rscript`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You will be asked a question, answer “Yes”.</p>
+<p>When prompted, type the password.</p>
+<div class="note">
+<p>Note that the password is entered through blind typing, meaning that you will not see anything happening as you type it. This is a Linux feature. While it is a little disturbing at first, do know that it is working. Make sure to type it slowly to avoid typos, then press the “enter” key on your keyboard.</p>
 </div>
-</div>
-<p>Then launch your job with:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="op">&lt;</span>your_job<span class="op">&gt;</span>.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You can monitor your job with <code>sq</code> (an alias for <code>squeue -u $USER $@</code>).</p>
-<div class="info">
-<p>Batch jobs are the best approach to run parallel computations, particularly when they require a lot of hardware.</p>
-<p>It will save you lots of waiting time (Alliance clusters) or money (commercial clusters).</p>
-</div>
+</section>
+</section>
+<section id="troubleshooting" class="level3">
+<h3 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h3>
+<p>Problems logging in are almost always due to typos. If you cannot log in, retry slowly, entering your password carefully.</p>
 
 
 </section>
@@ -657,13 +605,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../r_parallel/run_r_hpc.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SSH login</span>
+      <a href="../r_parallel/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Parallel R</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../r_parallel/performance.html" class="pagination-link">
-        <span class="nav-page-text">Measuring performance</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../r_parallel/clusters.html" class="pagination-link">
+        <span class="nav-page-text">R on HPC clusters</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
