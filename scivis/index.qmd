@@ -26,8 +26,10 @@ Please install [ParaView](https://www.paraview.org/download) on your computer, a
 
 <br>
 
-1. [Download today's materials](https://bit.ly/paraviewzipp) as a single ZIP file with slides (two PDFs), data
-and scripts inside. Unpack it where you can find it on your computer.
+1. [Download today's materials](https://transfer.sh/pMnOTpgEwc/paraview.zip) as a single ZIP file with slides
+(two PDFs), data and scripts inside. Unpack it where you can find it on your computer.
+
+<!-- NextCloud link https://bit.ly/paraviewzipp -->
 
 2. [Install recent ParaView](http://www.paraview.org/download) on your computer. Make sure it runs, i.e. you
    have installed the right version for your operating system and processor architecture.
