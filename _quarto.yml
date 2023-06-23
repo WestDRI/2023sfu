@@ -147,35 +147,33 @@ website:
         - section:
           contents:
             - ml/index.qmd
-        # - text: <b><em>Introduction to PyTorch</em></b>
-        #   href: ml/index.qmd
-        #   contents: 
-        #     - text: Overarching concept of DL
-        #       href: ml/concept.qmd
-        #     - text: "Concepts: AI, ML, DL, NN"
-        #       href: ml/nn.qmd
-        #     - text: Which framework to choose?
-        #       href: ml/choosing_frameworks.qmd
-        #     - text: High-level frameworks
-        #       href: ml/high_level_frameworks.qmd
-        #     - text: Automatic differentiation
-        #       href: ml/autograd.qmd
-        #     - text: Classifying the MNIST
-        #       href: ml/mnist.qmd
-        #     - text: Building a model
-        #       href: ml/nn_building.qmd
-        #     - text: Training a model
-        #       href: ml/nn_training.qmd
-        #     - text: Audio DataLoader
-        #       href: ml/audio_dataloader.qmd
-        #     - text: ML on production clusters
-        #       href: ml/hpc.qmd
-        #     - text: Finding pre-trained models
-        #       href: ml/pretrained_models.qmd
-        #     - text: Creating checkpoints
-        #       href: ml/checkpoints.qmd
-        #     - text: Resources
-        #       href: ml/resources.qmd
+        - text: <b><em>Introduction to PyTorch</em></b>
+          href: ml/index.qmd
+          contents: 
+            - text: Introduction
+              href: ml/intro.qmd
+            - text: Which framework to choose?
+              href: ml/choosing_frameworks.qmd
+            - text: High-level frameworks
+              href: ml/high_level_frameworks.qmd
+            - text: Introduction to NN
+              href: ml/nn.qmd
+            - text: The PyTorch API
+              href: ml/pytorch.qmd
+            - text: PyTorch tensors
+              href: ml/tensors.qmd
+            - text: Automatic differentiation
+              href: ml/autograd.qmd
+            - text: Workflow
+              href: ml/workflow.qmd
+            - text: Creating checkpoints
+              href: ml/checkpoints.qmd
+            - text: "Example: the MNIST"
+              href: ml/mnist.qmd
+            - text: ML on production clusters
+              href: ml/hpc.qmd
+            - text: Resources
+              href: ml/resources.qmd
     - id: scivis
       contents:
         - section:
