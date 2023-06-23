@@ -136,7 +136,7 @@ website:
         - section:
           contents:
             - ml/index.qmd
-        - text: <b><em>Introduction to PyTorch</em></b>
+        - text: <b><em>DL with PyTorch</em></b>
           href: ml/index.qmd
           contents: 
             - text: Introduction
