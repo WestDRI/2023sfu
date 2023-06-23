@@ -620,7 +620,7 @@
     "href": "ml/index.html",
     "title": "Deep learning with PyTorch",
     "section": "",
-    "text": "Date:\nThursday, June 22, 2023\nTime:\n9am–5pm (with a two-hour break from noon to 2pm)\nInstructor:\nMarie-Hélène Burle (Simon Fraser University)\nPrerequisites:\nBasic knowledge of Python.\nSoftware:\nWe will provide access to one of our Linux systems. To make use of it, attendees will need a remote secure shell (SSH) client installed on their computer. On Windows we recommend the free Home Edition of MobaXterm. On Mac and Linux computers, SSH is usually pre-installed (try typing ssh in a terminal to make sure it is there).\n\n Course notes can be found here."
+    "text": "Date:\nThursday, June 22, 2023\nTime:\n9am–5pm (with a two-hour break from noon to 2pm)\nInstructor:\nMarie-Hélène Burle (Simon Fraser University)\nPrerequisites:\nBasic knowledge of Python.\nSoftware:\nWe will provide access to one of our Linux systems. To make use of it, attendees will need a remote secure shell (SSH) client installed on their computer. On Windows we recommend the free Home Edition of MobaXterm. On Mac and Linux computers, SSH is usually pre-installed (try typing ssh in a terminal to make sure it is there).\n\n Start course ➤"
   },
   {
     "objectID": "ml/mnist.html",
