@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../ml/mnist.html" rel="next">
+<link href="../ml/workflow.html" rel="prev">
 <link href="..//img/sfu_favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -99,7 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -137,7 +139,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Parallel Julia</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../ml/index.html" rel="" target="">
+    <a class="nav-link active" href="../ml/index.html" rel="" target="" aria-current="page">
  <span class="menu-text">PyTorch</span></a>
   </li>  
   <li class="nav-item">
@@ -150,20 +152,126 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ml/index.html"><b><em>Introduction to PyTorch</em></b></a></li><li class="breadcrumb-item"><a href="../ml/checkpoints.html">Creating checkpoints</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../ml/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><b><em>Introduction to PyTorch</em></b></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml/choosing_frameworks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Which framework to choose?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml/high_level_frameworks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">High-level frameworks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml/nn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to NN</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml/pytorch.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The PyTorch API</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml/tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PyTorch tensors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml/autograd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatic differentiation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml/workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml/checkpoints.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Creating checkpoints</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml/mnist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example: the MNIST</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml/hpc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ML on production clusters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title"><em>On this page:</em></h2>
    
   <ul>
-  <li><a href="#saving-models" id="toc-saving-models" class="nav-link active" data-scroll-target="#saving-models">Saving models</a></li>
+  <li><a href="#savingloading-models" id="toc-savingloading-models" class="nav-link active" data-scroll-target="#savingloading-models">Saving/loading models</a>
+  <ul>
+  <li><a href="#saving-models" id="toc-saving-models" class="nav-link" data-scroll-target="#saving-models">Saving models</a></li>
   <li><a href="#loading-models" id="toc-loading-models" class="nav-link" data-scroll-target="#loading-models">Loading models</a></li>
-  <li><a href="#create-a-checkpoint" id="toc-create-a-checkpoint" class="nav-link" data-scroll-target="#create-a-checkpoint">Create a checkpoint</a></li>
-  <li><a href="#resume-training-from-a-checkpoint" id="toc-resume-training-from-a-checkpoint" class="nav-link" data-scroll-target="#resume-training-from-a-checkpoint">Resume training from a checkpoint</a></li>
+  </ul></li>
+  <li><a href="#checkpointing" id="toc-checkpointing" class="nav-link" data-scroll-target="#checkpointing">Checkpointing</a>
+  <ul>
+  <li><a href="#creating-a-checkpoint" id="toc-creating-a-checkpoint" class="nav-link" data-scroll-target="#creating-a-checkpoint">Creating a checkpoint</a></li>
+  <li><a href="#resuming-training-from-a-checkpoint" id="toc-resuming-training-from-a-checkpoint" class="nav-link" data-scroll-target="#resuming-training-from-a-checkpoint">Resuming training from a checkpoint</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -193,42 +301,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="saving-models" class="level2">
-<h2 class="anchored" data-anchor-id="saving-models">Saving models</h2>
-<p>You can save a model by <a href="https://en.wikipedia.org/wiki/Serialization">serializing</a> its internal state dictionary. The state dictionary is a Python dictionary that contains the parameters of your model.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>torch.save(model.state_dict(), <span class="st">"model.pth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="def">
+<p>After you have trained your model, obviously you will want to save it to use it thereafter. You will then need to load it in any session in which you want to use it.</p>
+<p>In addition to saving or loading a fully trained model, it is important to know how to create regular checkpoints: training ML models takes a long time and a cluster crash or countless other issues might interrupt the training process. You don’t want to have to restart from scratch if that happens.</p>
+</div>
+<section id="savingloading-models" class="level2">
+<h2 class="anchored" data-anchor-id="savingloading-models">Saving/loading models</h2>
+<section id="saving-models" class="level3">
+<h3 class="anchored" data-anchor-id="saving-models">Saving models</h3>
+<p>You can save a model by <a href="https://en.wikipedia.org/wiki/Serialization">serializing</a> its internal state dictionary. The state dictionary is a Python dictionary that contains the learnable parameters of your model (weights and biases).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>torch.save(model.state_dict(), <span class="st">"model.pt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="loading-models" class="level2">
-<h2 class="anchored" data-anchor-id="loading-models">Loading models</h2>
+<section id="loading-models" class="level3">
+<h3 class="anchored" data-anchor-id="loading-models">Loading models</h3>
 <p>To recreate your model, you first need to recreate its structure:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> Net()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> TheModelClass(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then you can load the state dictionary containing the parameters values into it:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>model.load_state_dict(torch.load(<span class="st">"model.pth"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>model.load_state_dict(torch.load(<span class="st">"model.pt"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Assuming you want to use your model for inference, you also must run:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>model.<span class="bu">eval</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="note">
+<p>If instead you want to do more training on your model, you would of course run <code>model.train()</code> instead.</p>
+</div>
 </section>
-<section id="create-a-checkpoint" class="level2">
-<h2 class="anchored" data-anchor-id="create-a-checkpoint">Create a checkpoint</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>torch.save({</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">'epoch'</span>: epoch,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">'model_state_dict'</span>: model.state_dict(),</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">'optimizer_state_dict'</span>: optimizer.state_dict(),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">'loss'</span>: loss,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>            ...</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            }, PATH)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="resume-training-from-a-checkpoint" class="level2">
-<h2 class="anchored" data-anchor-id="resume-training-from-a-checkpoint">Resume training from a checkpoint</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> TheModelClass(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> TheOptimizerClass(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>checkpoint <span class="op">=</span> torch.load(PATH)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>model.load_state_dict(checkpoint[<span class="st">'model_state_dict'</span>])</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>optimizer.load_state_dict(checkpoint[<span class="st">'optimizer_state_dict'</span>])</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>epoch <span class="op">=</span> checkpoint[<span class="st">'epoch'</span>]</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> checkpoint[<span class="st">'loss'</span>]</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>model.train()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="checkpointing" class="level2">
+<h2 class="anchored" data-anchor-id="checkpointing">Checkpointing</h2>
+<section id="creating-a-checkpoint" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-checkpoint">Creating a checkpoint</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>torch.save({</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'epoch'</span>: epoch,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'model_state_dict'</span>: model.state_dict(),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'optimizer_state_dict'</span>: optimizer.state_dict(),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'loss'</span>: loss,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}, <span class="st">"model.pt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="resuming-training-from-a-checkpoint" class="level3">
+<h3 class="anchored" data-anchor-id="resuming-training-from-a-checkpoint">Resuming training from a checkpoint</h3>
+<p>Recreate the state of your model from the checkpoint:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> TheModelClass(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> TheOptimizerClass(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>checkpoint <span class="op">=</span> torch.load(<span class="st">"model.pt"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>model.load_state_dict(checkpoint[<span class="st">'model_state_dict'</span>])</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>optimizer.load_state_dict(checkpoint[<span class="st">'optimizer_state_dict'</span>])</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>epoch <span class="op">=</span> checkpoint[<span class="st">'epoch'</span>]</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> checkpoint[<span class="st">'loss'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Resume training:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>model.train()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -479,6 +603,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../ml/workflow.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Workflow</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../ml/mnist.html" class="pagination-link">
+        <span class="nav-page-text">Example: the MNIST</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
